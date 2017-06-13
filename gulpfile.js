@@ -70,7 +70,7 @@ gulp.task('javascript', function() {
 });
 // html task
 gulp.task('html', function() {
-  return gulp.src('./src/*.html')
+  return gulp.src('./src/**/*.html')
     .pipe(gulp.dest('./src'))
     .pipe(browserSync.stream())
 });
@@ -86,6 +86,10 @@ gulp.task('default', function() {
   gulp.watch('src/js/**/*.js', function (event) {
     console.log(event);
     gulp.start('javascript');
+  });
+  gulp.watch('src/html/**/*.html', function (event) {
+    console.log(event);
+    gulp.start('html');
   });
   gulp.watch('src/**/*.html', function (event) {
     console.log(event);

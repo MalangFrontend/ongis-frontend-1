@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML IMPORT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./css/materi_01.min.css" rel="stylesheet">
+        <script src="./app/webcomponents.min.js" ></script>
+        <link href="./html/header.html" rel="import">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="./index.html">index</a></li>
+                <li><a href="./shadow-dom.html">shadow-dom</a></li>
+                <li><a href="./html-import.html">html-import</a></li>
+                <li><a href="./html-template.html">html-template</a></li>
+            </ul>
+        </nav>
+        <script type="text/javascript">
+            var link = document.querySelector('link[rel="import"]');
+            var content = link.import;
+            var el = content.querySelector('header');
+            document.body.appendChild(el.cloneNode(true));
+        </script>
+    </body>
+</html>
